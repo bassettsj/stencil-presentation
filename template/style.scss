@@ -1,24 +1,28 @@
 // Theme
 // ---------------------------------------------------------------------------
 
-$primary          : #3F51B5;
-$secondary        : #009688;
-$tertiary         : #757575;
-$light            : #FFF;
-$dark             : #333;
-$text-dark        : #212121; 
+$avocado-green    : #37A000;
+$dark-avocado     : #008329;
+$purple-bule      : #5850ff;
+
+$primary          : $avocado-green;
+$secondary        : $dark-avocado;
+$tertiary         : $purple-bule;
+$light            : #F9F9F9;
+$dark             : #222222;
+$text-dark        : $dark;
 $text-light       : $light;
 $code-background  : #F8F8F8;
 $overlay          : transparentize(#000, .5);
-$font-size        : 28px;
-$font-size-impact : 128px;
-$font             : Arial, Helvetica, sans-serif;
-$font-title       : Arial, Helvetica, sans-serif;
+$font-size        : 1.8em;
+$font-size-impact : 3em;
+$font             : --apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+$font-title       : "Poppins", --apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 $font-fixed       : 'Lucida Console', Monaco, monospace;
-$margin           : 20px;
+$margin           : 40px;
 $iframe-scale     : 1.5;
 
-
+@import url('//fonts.googleapis.com/css?family=Poppins');
 // CSS Base
 // ---------------------------------------------------------------------------
 
@@ -28,9 +32,9 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 $margin 0;
   font-family: $font-title;
 }
-h1 { color: $primary; }
+h1 { color: $secondary; }
 h2 { color: $secondary; }
-h3 { color: $tertiary; }
+h3 { color: $secondary; }
 li { margin-bottom: .25em; };
 pre, code {
   text-align: left;
@@ -95,7 +99,8 @@ blockquote {
 }
 
 .bottom-bar {
-  background-color: $primary;
+  font-family: $font-title;
+  background-color: $secondary;
   color: $text-light;
   position: absolute;
   bottom: 0;

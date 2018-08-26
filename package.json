@@ -1,7 +1,7 @@
 {
   "name": "stencil-presentation",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
   "author": "Steven Bassett <steven.j.bassett@gmail.com>",
   "license": "MIT",
   "devDependencies": {
@@ -10,7 +10,7 @@
   },
   "scripts": {
     "serve": "bs serve",
-    "build": "bs export",
+    "build": "bs export index.md",
     "clean": "rm -rf dist/*",
     "deploy": "gh-pages -d dist"
   }
