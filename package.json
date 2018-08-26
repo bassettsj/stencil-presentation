@@ -1,0 +1,14 @@
+{
+  "name": "stencil-presentation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Steven Bassett <steven.j.bassett@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "backslide": "^2.3.1"
+  },
+  "scripts": {
+    "serve": "bs serve",
+    "build": "bs export"
+  }
+}
