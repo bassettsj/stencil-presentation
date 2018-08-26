@@ -8,7 +8,6 @@ layout: true
 ]
 
 ---
-
 class: impact
 
 # {{title}}
