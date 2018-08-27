@@ -11,7 +11,6 @@ layout: true
 class: impact
 
 # {{title}}
-## Frameworks agnostic, better performance and future friendly.
 
 Steven Bassett, UI Engineering
 ---
@@ -33,7 +32,7 @@ Today I am going to talk about web components, a tool to build them, why we chos
 
 * Natively-supported, standardized JavaScript components
 * Run in every framework or on their own
-* Answer to the shared-component problem
+<!-- * Answer to the shared-component problem -->
 * Powered by the [Custom Element spec](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements)
 * [Native browser support][browser-support]: Chrome, Safari, Firefox (in v63) and great polyfills
 
@@ -46,17 +45,13 @@ Since they are just built on the open web, they are easy to be used in any front
 
 They help us encapsulate shared components across a large site.
 
-At their core, they are
+At their core, they are powered by the Custom Elements API that allow us to define our own tags.
+
+Browser support is progressing much faster. Custom Elements have landed in Chrome, Safari, and soon FireFox. There are great polyfills for browsers that do not support them yet.
 
 ---
 
 ## Custom Element Example
-
-```html
-<my-tabs>
-  <my-tab active tab-title="general" slot="tabs">...</my-tab>
-</my-tabs>
-```
 
 ```js
 class MyTabs extends HTMLElement {
@@ -66,16 +61,42 @@ class MyTabs extends HTMLElement {
     attributeChangedCallback() {}
 }
 
-document.registerElement('my-tabs', MyTabs);
+customElements.define('my-tabs', MyTabs);
 ```
+???
+Custom elements are defined by creating a class that extend the HTMLElement. The class can take advantages of lifecycle hooks like knowing when the element has been created or when an HTML attribute changes.
+
+---
+## Custom Element Example (cont.)
+
+```html
+<my-tabs>
+  <my-tab active tab-title="general" slot="tabs">
+    ...
+  </my-tab>
+</my-tabs>
+```
+
+???
+Using a custom element is as simple as writing HTML or using the standard DOM apis.
+
+Attributes and properties are the primary way we communicate to these elements.
+
+CustomEvents allow us to dispatch callbacks and cummunicate to the rest of the page.
 
 ---
 ## How can we make building custom elements easier?
 
 * Still want framework features
 * Desire to manage bundles of components
-* Provide code splitting out of the box
 * Great developer experience
+
+???
+While the platform APIs give us powerful ways of writing custom elements, much of what a frontend developer expects is missing.
+
+Managing the bundling and build optimization required a lot of setup.
+
+Writing vanilla components lack some great developer tools like typescript, hot realoading and dev tools.
 
 ---
 
@@ -86,7 +107,12 @@ document.registerElement('my-tabs', MyTabs);
 * Adds powerful framework features to Web Components, with only 6kb overhead
 
 
-[Stencil Documentation](https://stenciljs.com/)
+<small>[Stencil Documentation](https://stenciljs.com/)</small>
+
+???
+Stencil is a web component compiler instead of a framework. It provides a compiler that includes most of the features we expect in a full framwork. Yet it's output is just custom elements that can be used everywhere.
+
+It has a very small overhead and it is easy to get started.
 ---
 
 ## Example Stencil Component
@@ -94,7 +120,7 @@ document.registerElement('my-tabs', MyTabs);
 ```jsx
 import { Component, Prop } from '@stencil/core';
 
-@Component({ tag: 'my-name', styleUrl: 'my-name.scss' })
+@Component({ tag: 'my-name', styleUrl: './my-name.scss' })
 export class MyName {
   @Prop() name: string;
   render() {
@@ -102,6 +128,9 @@ export class MyName {
   }
 }
 ```
+???
+
+
 
 ---
 ## Compiled Components Have:
