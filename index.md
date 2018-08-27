@@ -100,7 +100,7 @@ Writing vanilla components lack some great developer tools like typescript, hot 
 
 ---
 
-## .max-height-100[![Stencil](https://stenciljs.com/assets/img/stencil-logo-new.svg)]
+## .max-height-100[![Stencil](./reports/stencil-logo-new.svg)]
 
 * A compiler that generates Custom Elements, part of the Web Components spec
 * Not a framework: output is 100% standards-compliant Custom Elements
