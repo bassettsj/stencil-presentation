@@ -10,8 +10,11 @@
       return remark.create({
         {{{source}}},
         ratio: '4:3',
+        navigation: {
+          scroll: false,
+          click: true,
+        },
         highlightLines: true,
-        highlightLanguage: 'typescript',
         countIncrementalSlides: false,
         highlightStyle: 'github'
       });

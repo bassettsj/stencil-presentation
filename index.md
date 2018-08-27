@@ -167,22 +167,19 @@ UI Engineering compared to other options
 - Great tooling and developer tools.
 
 ---
-## Performance
-
-**Cached**
-<iframe src="reports/lighthouse-cached.html" width="100%" height="60%"></iframe>
+## Performance: Cached
+<iframe src="reports/lighthouse-cached.html" width="100%" height="70%"></iframe>
 
 ---
-## Performance
-**First Visit**
-<iframe src="reports/lighthouse.html" width="100%" height="60%"></iframe>
+## Performance: First Visit
+<iframe src="reports/lighthouse.html" width="100%" height="70%"></iframe>
 
 ---
 ## How we are using web components today?
 
 --
 ```html
-<upg-cookie-banner />
+<cookie-banner />
 <mobile-alert-banner />
 ```
 
