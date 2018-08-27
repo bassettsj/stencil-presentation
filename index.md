@@ -115,7 +115,7 @@ Stencil is a web component compiler instead of a framework. It provides a compil
 It has a very small overhead and it is easy to get started.
 ---
 
-## Example Stencil Component
+## A Stencil Component
 
 ```jsx
 import { Component, Prop } from '@stencil/core';
@@ -170,20 +170,32 @@ UI Engineering compared to other options
 ## Performance
 
 **Cached**
-<iframe src="./lighthouse-cached.html" width="100%" height="60%"></iframe>
+<iframe src="reports/lighthouse-cached.html" width="100%" height="60%"></iframe>
 
 ---
 ## Performance
 **First Visit**
-<iframe src="./lighthouse.html" width="100%" height="60%"></iframe>
+<iframe src="reports/lighthouse.html" width="100%" height="60%"></iframe>
 
 ---
 ## How we are using web components today?
 
-* In production with our cookie, mobile alert banners
-* Migration of the component library
-* Standalone site wide navigation application
-* Bolt native application aware components
+--
+```html
+<upg-cookie-banner />
+<mobile-alert-banner />
+```
+
+--
+Migration of the component library.
+
+--
+
+Standalone site wide navigation application
+
+--
+
+Bolt native application aware components
 
 ???
 

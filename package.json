@@ -11,7 +11,7 @@
   "scripts": {
     "serve": "bs serve",
     "build": "bs export index.md",
-    "copy": "cp -r ./template/public/* ./dist",
+    "copy": "cp -r ./template/reports ./dist/",
     "clean": "rm -rf dist/*",
     "deploy": "yarn clean && yarn build && yarn copy && gh-pages -d dist"
   }
