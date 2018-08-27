@@ -110,7 +110,7 @@ Writing vanilla components lack some great developer tools like typescript, hot 
 <small>[Stencil Documentation](https://stenciljs.com/)</small>
 
 ???
-Stencil is a web component compiler instead of a framework. It provides a compiler that includes most of the features we expect in a full framwork. Yet it's output is just custom elements that can be used everywhere.
+Stencil is a web component compiler instead of a framework. It provides a compiler that includes most of the features we expect in a full framework. Yet it's output is just custom elements that can be used everywhere.
 
 It has a very small overhead and it is easy to get started.
 ---
@@ -122,13 +122,19 @@ import { Component, Prop } from '@stencil/core';
 
 @Component({ tag: 'my-name', styleUrl: './my-name.scss' })
 export class MyName {
+  // Properties to bind attrs and properties;
+  // uses type information to typecast.
   @Prop() name: string;
+  @Prop() age: number;
   render() {
-    return <p>Hello, my name is {this.name}</p>;
+    return <p>Hello, my name is {this.name}. I am ${this.age}</p>;
   }
 }
 ```
+
 ???
+
+*
 
 
 
@@ -142,6 +148,8 @@ export class MyName {
 - **JSX**: Popular and familiar markup system pioneered by React
 - **Server Side Rendering**: Hydrate pre-compiled components on the server without a headless browser
 
+???
+
 ---
 ## Why we chose Stencil?
 
@@ -149,6 +157,14 @@ export class MyName {
 * **Interoperability**: Ability to create components that work across all major frameworks.
 * **Familiarity**: features from frameworks but in a leaner, standards-compliant package
 * **Developer Productivity**: Features like hot reloading and CSS encapsulation make our team faster.
+
+???
+UI Engineering compared to other options
+
+- Low overhead and easy code splitting at runtime
+- Angular and Vue
+- Very similar to react or other modern frameworks
+- Great tooling and developer tools.
 
 ---
 ## Performance
@@ -162,22 +178,21 @@ export class MyName {
 <iframe src="./lighthouse.html" width="100%" height="60%"></iframe>
 
 ---
-
 ## How we are using web components today?
 
-* Already in use on production with our cookie, mobile alert banners.
-* Migration of the component library.
-* The creation of standalone site wide navigation application.
-* Bolt native application aware components, with communication built in.
+* In production with our cookie, mobile alert banners
+* Migration of the component library
+* Standalone site wide navigation application
+* Bolt native application aware components
+
+???
 
 ---
-
 ## How to get started in your existing applications?
 
 ```bash
 yarn create stencil
 ```
-
 
 ---
 ### Tips:
